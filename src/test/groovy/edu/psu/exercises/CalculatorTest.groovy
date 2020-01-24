@@ -67,4 +67,24 @@ class CalculatorTest {
     public void average_withStreams() {
         assert Calculator.average_usingDoubleStream([3, 3, 3, 3, 3]) == 3.0
     }
+
+    @Test
+    public void returnPositives() {
+        assert [3, 4, 1] == Calculator.findPositives(3, -1, 4, 1, -5)
+    }
+
+    @Test
+    void returnPositives_fromNegatives() {
+        assert [] == Calculator.findPositives(-1, -2, -3)
+    }
+
+    @Test
+    void returnPositives_fromEmpty() {
+        assert [] == Calculator.findPositives()
+    }
+
+    @Test
+    void returnPositives_fromNull() {
+        assert [] == Calculator.findPositives(null)
+    }
 }

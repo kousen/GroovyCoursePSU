@@ -61,4 +61,8 @@ class Calculator {
             .mapToDouble { it.doubleValue() }
             .average().orElse(0.0)
     }
+
+    static List<Integer> findPositives(Integer... numbers) {
+        numbers?.findAll { it > 0 } ?: []
+    }
 }
